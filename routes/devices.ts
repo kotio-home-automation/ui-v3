@@ -19,7 +19,7 @@ const fakeInput: Device[] = [
 const router: Router = express.Router()
 const devicesApiPath = `${config.apis.tellstick}/devices`
 const deviceOnApiPath = `${devicesApiPath}/on`
-const deviceOffApiPath = `${devicesApiPath}/on`
+const deviceOffApiPath = `${devicesApiPath}/off`
 
 const getDevices = async (): Promise<Device[]> => {
   if (config.useFake) {
