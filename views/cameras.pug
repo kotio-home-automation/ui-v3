@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    div(id='cameras-container' class='grid lg:grid-cols-3 border-1 border-b-0 border-black mb-2 rounded-t-sm')
+        div(class='lg:col-span-3')
+            h2(class='text-center text-gray-700 text-xl') Cameras
+        each camera in cameras
+            - const cameraClassState = camera.privacy_enabled ? 'iconoir-video-camera-off' : 'text-yellow-500 iconoir-video-camera'
+            - const cameraClass = `text-6xl ${cameraClassState}`
+            div(class='border-black-50 gap-4 rounded-sm p-5 pt-1 m-2 bg-gray-300 text-gray-700 text-center')
+                h3(class='mb-2') #{camera.name}
+                i(class=cameraClass)
+        div(class='lg:col-span-3 border-black-50 gap-4 rounded-sm p-5 pt-1 m-2 bg-gray-300 text-gray-700 text-center')
+            button(hx-post='/cameras/off' hx-swap='innerHTML' hx-target='#main-content' class='cursor-pointer') Turn off cameras
+            button(hx-post='/cameras/on' hx-swap='innerHTML' hx-target='#main-content' class='cursor-pointer') Turn on cameras
+            p(class='htmx-indicator') Loading...

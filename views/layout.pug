@@ -1,0 +1,20 @@
+doctype html
+- const linkStyle = 'col-span-3 lg:col-span-1 bg-gray-400 m-1 pt-3 pb-3 rounded-sm text-center hover:bg-gray-300'
+- const linkTextStyle = 'font-bold'
+html(lang='en')
+  head
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Kotio
+    link(rel='stylesheet', href='/stylesheets/iconoir.css')
+    script(src='/javascripts/htmx.min.js')
+    script(src='/javascripts/tailwind.min.js')
+  body(class='bg-gray-200 max-w-6xl content-center m-auto font-sans')
+    div(class='grid grid-cols-3')
+      a(class=linkTextStyle href='/sensors')
+        div(class=linkStyle) Sensors
+      a(class=linkTextStyle href='/lights-devices')
+        div(class=linkStyle) Controllables
+      a(class=linkTextStyle href='/cameras')
+        div(class=linkStyle) Cameras
+    div(id='main-content' class='m-2')
+      block content

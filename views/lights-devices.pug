@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    div(id='lights-container' hx-get='/lights' hx-trigger='load, every 1m')
+        p Loading lights...
+    div(id='devices-container' hx-get='/devices' hx-trigger='load, every 1m')
+        p Loading power switches...

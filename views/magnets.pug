@@ -1,0 +1,12 @@
+block content
+    div(class='grid lg:grid-cols-3 border-1 border-b-0 border-black mb-2 rounded-t-sm')
+        div(class='lg:col-span-3')
+            h2(class='text-center text-gray-700 text-xl') Magnets
+        each magnet in magnets
+            - const magnetClassState = magnet.isOpen ? 'text-red-500 iconoir-magnet' : 'iconoir-magnet-energy'
+            - const magnetClass = `text-6xl ${magnetClassState}`
+            div(class='border-black-50 gap-4 rounded-sm p-5 pt-1 m-5 bg-gray-300 text-gray-700 text-center')
+                h3(class='mb-2') #{magnet.name}
+                i(class=magnetClass)
+                p(class='text-xs text-left mt-5') last seen: #{magnet.lastSeen}
+                p(class='text-xs text-left') battery: #{magnet.battery}

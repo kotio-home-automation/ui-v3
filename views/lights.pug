@@ -1,0 +1,16 @@
+block content
+    div(class='grid grid-cols-4 border-1 border-b-0 border-black mb-2 rounded-t-sm')
+        div(class='col-span-4')
+            h2(class='text-center text-gray-700 text-xl') Lights
+        each light in lights
+            - const lastSeen = 'last seen: '+ light.lastSeen
+            - const lightClassBase = 'text-6xl'
+            - const lightClassOn = 'text-yellow-500 iconoir-light-bulb-on ' + lightClassBase
+            - const lightClassOff = 'iconoir-light-bulb-off ' + lightClassBase
+            - const lightClass = light.isOn ? lightClassOn : lightClassOff
+            - const lightUrl = '/lights/' + light.id
+            div(hx-post=lightUrl hx-swap='innerHTML' hx-target='#lights-container' class='col-span-2 lg:col-span-1 cursor-pointer border-black-50 gap-4 rounded-xl p-5 pt-1 m-5 bg-gray-300 text-gray-700 text-center')
+                h3(class='mb-2') #{light.name}
+                i(class=lightClass)
+                p(class='htmx-indicator') Loading...
+                p(class='text-xs text-left mt-5')= lastSeen

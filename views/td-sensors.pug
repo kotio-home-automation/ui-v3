@@ -1,0 +1,15 @@
+block content
+    div(class='grid lg:grid-cols-3 border-1 border-b-0 border-black mb-2 rounded-t-sm')
+        div(class='lg:col-span-3')
+            h2(class='text-center text-gray-700 text-xl') Tellstick sensors
+        each sensor in sensors
+            div(class='border-black-50 gap-4 rounded-sm p-5 pt-1 m-2 bg-gray-300 text-gray-700 text-center')
+                h3(class='mb-2') #{sensor.name}
+                div(class='grid grid-cols-2')
+                    div(class='col-span-1')
+                        p(class='text-xl text-left') #[i(class='text-3xl iconoir-sun-light')] #{sensor.temperature} °C
+                    div(class='col-span-1')
+                        if sensor.humidity
+                            p(class='text-xl text-left mt-1') #[i(class='text-3xl iconoir-droplet')] #[span(class='text-sm')] #{sensor.humidity} h%
+                        else
+                            p(class='text-xl text-left mt-1 text-gray-500') #[i(class='text-3xl iconoir-droplet')] No data
