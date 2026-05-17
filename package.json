@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node -r dotenv/config ./dist/bin/www.js",
-    "build": "tsc",
+    "build": "tsc && cp -r views/ dist/ && cp -r public dist/",
     "dev": "nodemon -r dotenv/config ./bin/www.ts",
     "test": "vitest",
     "lint": "oxlint",
