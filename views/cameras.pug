@@ -8,7 +8,7 @@ block content
             - const cameraClassState = camera.privacy_enabled ? 'iconoir-video-camera-off' : 'text-yellow-500 iconoir-video-camera'
             - const cameraClass = `text-6xl ${cameraClassState}`
             div(class='border-black-50 gap-4 rounded-sm p-5 pt-1 m-2 bg-gray-300 text-gray-700 text-center')
-                h3(class='mb-2') #{camera.name}
+                h3(class='mb-2 font-bold underline') #{camera.name}
                 i(class=cameraClass)
         div(class='lg:col-span-3 border-black-50 gap-4 rounded-sm p-5 pt-1 m-2 bg-gray-300 text-gray-700 text-center')
             button(hx-post='/cameras/off' hx-swap='innerHTML' hx-target='#main-content' class='cursor-pointer') Turn off cameras

@@ -9,6 +9,6 @@ block content
             - const devicesClass = device.switchedOn ? devicesClassOn : devicesClassOff
             - const devicesUrl = device.switchedOn ? '/devices/' + device.id + '/off' : '/devices/' + device.id + '/on'
             div(hx-post=devicesUrl hx-swap='innerHTML' hx-target='#devices-container' class='col-span-2 lg:col-span-1 cursor-pointer border-black-50 gap-4 rounded-xl p-5 pt-1 m-5 bg-gray-300 text-gray-700 text-center')
-                h3(class='mb-5') #{device.name}
+                h3(class='mb-5 font-bold underline') #{device.name}
                 i(class=devicesClass)
                 p(class='htmx-indicator') Loading...

@@ -6,7 +6,7 @@ block content
             - const magnetClassState = magnet.isOpen ? 'text-red-500 iconoir-magnet' : 'iconoir-magnet-energy'
             - const magnetClass = `text-6xl ${magnetClassState}`
             div(class='border-black-50 gap-4 rounded-sm p-5 pt-1 m-5 bg-gray-300 text-gray-700 text-center')
-                h3(class='mb-2') #{magnet.name}
+                h3(class='mb-2 font-bold underline') #{magnet.name}
                 i(class=magnetClass)
                 p(class='text-xs text-left mt-5') last seen: #{magnet.lastSeen}
                 p(class='text-xs text-left') battery: #{magnet.battery}

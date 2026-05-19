@@ -4,14 +4,18 @@ block content
             h2(class='text-center text-gray-700 text-xl') Ruuvitag sensors
         each ruuvitag in ruuvitags
             div(class='border-black-50 gap-4 rounded-sm p-5 pt-1 m-2 bg-gray-300 text-gray-700 text-center')
-                h3(class='mb-2') #{ruuvitag.name}
+                h3(class='mb-2 font-bold underline') #{ruuvitag.name}
                 div(class='grid grid-cols-2')
                     div(class='col-span-1')
-                        p(class='text-xl text-left') #[i(class='text-3xl iconoir-sun-light')] #{ruuvitag.data.temperature} °C
+                        p(class='text-xl text-left') #[i(class='text-3xl iconoir-sun-light pr-1')]
+                            span(class='align-top') #{ruuvitag.data.temperature} °C
                         if ruuvitag.data.pressure
-                            p(class='text-xl text-left mt-1') #[i(class='text-3xl iconoir-wind')] #[span(class='text-sm')] #{ruuvitag.data.pressure} hPa
+                            p(class='text-xl text-left mt-1') #[i(class='text-3xl iconoir-wind pr-1')]
+                                span(class='align-top') #{ruuvitag.data.pressure} hPa
                         else
-                            p(class='text-xl text-left mt-1 text-gray-500') #[i(class='text-3xl iconoir-wind')] No data
+                            p(class='text-xl text-left mt-1 text-gray-500') #[i(class='text-3xl iconoir-wind pr-1')]
+                                span(class='align-top') No data
                     div(class='col-span-1')
-                        p(class='text-xl text-left') #[i(class='text-3xl iconoir-droplet')] #{ruuvitag.data.humidity} %
+                        p(class='text-xl text-left') #[i(class='text-3xl iconoir-droplet pr-1')]
+                            span(class='align-top') #{ruuvitag.data.humidity} %
 

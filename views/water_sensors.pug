@@ -6,7 +6,7 @@ block content
             - const waterClassState = ws.hasLeak ? 'text-red-500 iconoir-watering-soil' : 'iconoir-droplet-check'
             - const waterClass = `text-6xl ${waterClassState}`
             div(class='border-black-50 gap-4 rounded-sm p-5 pt-1 m-5 bg-gray-300 text-gray-700 text-center')
-                h3(class='mb-2') #{ws.name}
+                h3(class='mb-2 font-bold underline') #{ws.name}
                 i(class=waterClass)
                 p(class='text-xs text-left mt-5') last seen: #{ws.lastSeen}
                 p(class='text-xs text-left') battery: #{ws.battery}
