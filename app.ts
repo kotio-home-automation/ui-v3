@@ -15,6 +15,7 @@ import devicesRouter from './routes/devices';
 import lightDevicesRouter from './routes/lights-devices'
 import tdSensorsRouter from './routes/td-sensors';
 import camerasRouter from './routes/cameras';
+import camerasWrapperRouter from './routes/cameras-wrapper';
 
 const app: Express = express();
 
@@ -38,6 +39,7 @@ app.use('/ruuvitag', ruuvitagRouter);
 app.use('/sensors', sensorsRouter);
 app.use('/lights-devices', lightDevicesRouter);
 app.use('/td-sensors', tdSensorsRouter);
+app.use('/cameras-wrapper', camerasWrapperRouter);
 app.use('/cameras', camerasRouter);
 
 // catch 404 and forward to error handler

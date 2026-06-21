@@ -1,0 +1,5 @@
+extends layout
+
+block content
+    div(id='cameras-container' hx-get='/cameras' hx-trigger='load, every 1m')
+        p Loading cameras...
