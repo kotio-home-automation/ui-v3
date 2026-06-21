@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-import app from '../app';
+import app from './app';
 import debugFactory from 'debug';
 import * as http from 'http';
 const debug = debugFactory('ui-v3:server');
@@ -90,4 +90,3 @@ function onListening(): void {
     : 'port ' + addr?.port;
   debug('Listening on ' + bind);
 }
-

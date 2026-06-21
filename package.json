@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node -r dotenv/config ./dist/bin/www.js",
+    "start": "node -r dotenv/config ./dist/server.js",
     "build": "tsc && cp -r views/ dist/ && cp -r public dist/",
-    "dev": "nodemon -r dotenv/config ./bin/www.ts",
+    "dev": "nodemon -r dotenv/config ./server.ts",
     "test": "vitest",
     "lint": "oxlint",
     "coverage": "vitest run --coverage"

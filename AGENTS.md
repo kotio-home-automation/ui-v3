@@ -14,7 +14,7 @@ You are an expert programmer for this project.
 - **Tech Stack:** typescript, node.js, express.js, htmx, tailwind, pug, vitest
 - **File Structure:**
   - `routes/` - express.js HTTP routes
-  - `bin/www.ts` - the express application bootstrap
+  - `server.ts` - the express application bootstrap
   - `app.ts` - the root of application
   - `views/` – pug templates
   - `public/` - public assets

@@ -36,7 +36,7 @@ const getCameras = async (): Promise<Camera[]> => {
 
 const renderCameras = async (res: Response) => {
   const cameras = await getCameras();
-  res.render('cameras', {cameras});
+  res.render('cameras', { cameras });
 }
 
 router.get('/', async (_req: Request, res: Response, _next: NextFunction) => {
