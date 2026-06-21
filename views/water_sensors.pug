@@ -1,13 +1,13 @@
 block content
-    div(class='grid lg:grid-cols-3 border-1 border-b-0 border-black mb-2 rounded-t-sm')
+    div(class='grid lg:grid-cols-3 border-1 border-b-0 border-gray-700 mb-2 rounded-t-sm')
         div(class='lg:col-span-3')
-            h2(class='text-center text-gray-700 text-xl') Water sensors
+            h2(class='text-center text-gray-100 text-xl') Water sensors
         each ws in waterSensors
             - const waterClassState = ws.hasLeak ? 'text-red-500 iconoir-watering-soil' : 'iconoir-droplet-check'
             - const waterClass = `text-6xl ${waterClassState}`
-            div(class='border-black-50 gap-4 rounded-sm p-5 pt-1 m-5 bg-gray-300 text-gray-700 text-center')
+            div(class='border-gray-700 gap-4 rounded-sm p-5 pt-1 m-5 bg-gray-800 text-gray-100 text-center')
                 h3(class='mb-2 font-bold underline') #{ws.name}
                 i(class=waterClass)
-                p(class='text-xs text-left mt-5') last seen: #{ws.lastSeen}
-                p(class='text-xs text-left') battery: #{ws.battery}
+                p(class='text-xs text-left mt-5 text-gray-400') last seen: #{ws.lastSeen}
+                p(class='text-xs text-left text-gray-400') battery: #{ws.battery}
 

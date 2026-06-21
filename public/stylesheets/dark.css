@@ -1,0 +1,19 @@
+/* small dark-mode overrides for third-party assets */
+/* Ensure icon sets using SVG inherit currentColor */
+svg {
+  color: inherit;
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+/* If icon fonts or images need inversion, scope rules here */
+.iconoir,
+.iconoir * {
+  color: inherit;
+}
+
+/* Make links more visible if third-party CSS hides them */
+a {
+  color: inherit;
+}
+
