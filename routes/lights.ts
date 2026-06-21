@@ -24,6 +24,8 @@ const fakeInput: InputLight[] = [
 
 const router: Router = express.Router()
 const lightsApiPath = `${config.apis.dirigera}/lights`
+const lightsOnApiPath = `${config.apis.dirigera}/lights/on`
+const lightsOffApiPath = `${config.apis.dirigera}/lights/off`
 
 const mapToLights = (inputLights: InputLight[]): Light[] => {
   return inputLights.map(input => {
@@ -58,9 +60,29 @@ router.get('/', async (_req: Request, res: Response, _next: NextFunction) => {
   await renderLights(res)
 });
 
-router.post('/:id', async (req: Request, res: Response, _next: NextFunction) => {
+router.post('/:id/on', async (req: Request, res: Response, _next: NextFunction) => {
   const id = req.params.id
-  console.log(`called light post with id ${id}`)
+  const reqBody = JSON.stringify(id)
+  await fetch(lightsOnApiPath, {
+    method: 'POST',
+    body: reqBody,
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  })
+  await renderLights(res)
+})
+
+router.post('/:id/off', async (req: Request, res: Response, _next: NextFunction) => {
+  const id = req.params.id
+  const reqBody = JSON.stringify(id)
+  await fetch(lightsOffApiPath, {
+    method: 'POST',
+    body: reqBody,
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  })
   await renderLights(res)
 })
 

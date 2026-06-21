@@ -28,8 +28,8 @@ describe('Lights', () => {
     })
 
     describe('When POST /lights/:id', async () => {
-        const path = '/lights/1'
-        const nonExistingPath = '/lights/2'
+        const path = '/lights/1/on'
+        const nonExistingPath = '/lights/2/on'
 
         beforeEach(() => {
             nock(apiBasePath)
@@ -38,6 +38,10 @@ describe('Lights', () => {
         })
 
         describe('And given light exists', () => {
+            nock(apiBasePath)
+                .post('/lights/on')
+                .reply(200, fakeLights)
+
             it('Then HTTP 200 is returned', async () => {
                 const response = await request.post(path)
                 expect(response.status).toBe(200)
@@ -45,9 +49,9 @@ describe('Lights', () => {
         })
 
         describe('And given light does not exist', () => {
-            it('Then HTTP 200 is returned', async () => {
+            it('Then HTTP 404 is returned', async () => {
                 const response = await request.post(nonExistingPath)
-                expect(response.status).toBe(200)
+                expect(response.status).toBe(404)
             })
         })
     })
