@@ -43,20 +43,6 @@ router.get('/', async (_req: Request, res: Response, _next: NextFunction) => {
   await renderCameras(res);
 })
 
-router.post('/on', async (_req: Request, res: Response, _next: NextFunction) => {
-  await fetch(config.apis.tapoCamera, {
-    method: 'POST',
-    body: JSON.stringify({ privacy: 'on' })
-  })
-  await renderCameras(res)
-})
 
-router.post('/off', async (_req: Request, res: Response, _next: NextFunction) => {
-  await fetch(config.apis.tapoCamera, {
-    method: 'POST',
-    body: JSON.stringify({ privacy: 'off' })
-  })
-  await renderCameras(res)
-})
 
 export default router

@@ -8,8 +8,3 @@ block content
             div(class='border-gray-700 gap-4 rounded-sm p-5 pt-1 m-2 bg-gray-800 text-gray-100 text-center')
                 h3(class='mb-2 font-bold underline') #{camera.name}
                 i(class=cameraClass)
-        div(class='lg:col-span-3 border-gray-700 gap-4 rounded-sm p-5 pt-1 m-2 bg-gray-800 text-gray-100 text-center')
-            button(hx-post='/cameras/off' hx-swap='innerHTML' hx-target='#cameras-container' class='cursor-pointer border-gray-700 gap-4 rounded-sm p-5 pt-1 pb-1 m-2 bg-gray-700 text-gray-100 text-center font-bold') Turn off cameras
-                p(class='htmx-indicator') Loading...
-            button(hx-post='/cameras/on' hx-swap='innerHTML' hx-target='#cameras-container' class='cursor-pointer border-gray-700 gap-4 rounded-sm p-5 pt-1 pb-1 m-2 bg-gray-700 text-gray-100 text-center font-bold') Turn on cameras
-                p(class='htmx-indicator') Loading...
