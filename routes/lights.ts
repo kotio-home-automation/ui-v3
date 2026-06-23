@@ -62,7 +62,7 @@ router.get('/', async (_req: Request, res: Response, _next: NextFunction) => {
 
 router.post('/:id/on', async (req: Request, res: Response, _next: NextFunction) => {
   const id = req.params.id
-  const reqBody = JSON.stringify(id)
+  const reqBody = JSON.stringify({ id })
   await fetch(lightsOnApiPath, {
     method: 'POST',
     body: reqBody,
@@ -75,7 +75,7 @@ router.post('/:id/on', async (req: Request, res: Response, _next: NextFunction) 
 
 router.post('/:id/off', async (req: Request, res: Response, _next: NextFunction) => {
   const id = req.params.id
-  const reqBody = JSON.stringify(id)
+  const reqBody = JSON.stringify({ id })
   await fetch(lightsOffApiPath, {
     method: 'POST',
     body: reqBody,
