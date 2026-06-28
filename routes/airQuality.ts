@@ -5,10 +5,11 @@ import { config } from '../config';
 export type InputAirQuality = {
     id: string
     name: string
-    temperature: number
-    humidity: number
-    pm25: number
-    voc: number
+    temperature?: number
+    humidity?: number
+    pm25?: number
+    voc?: number
+    co2?: number
     last_seen: string
 }
 
@@ -17,7 +18,7 @@ export type AirQuality = Omit<InputAirQuality, 'last_seen'> & {
 }
 
 const fakeInput: InputAirQuality[] = [
-    {id: '1', name: 'first', temperature: 20, humidity: 50, pm25: 10, voc: 100, last_seen: '20260222T11:30:00.000Z'},
+    {id: '1', name: 'first', temperature: 20, humidity: 50, pm25: 10, co2: 415, last_seen: '20260222T11:30:00.000Z'},
     {id: '2', name: 'second', temperature: 21, humidity: 51, pm25: 11, voc: 101, last_seen: '20260222T11:30:00.000Z'},
     {id: '3', name: 'third', temperature: 22, humidity: 52, pm25: 12, voc: 102, last_seen: '20260222T11:30:00.000Z'},
     {id: '4', name: 'fourth', temperature: 23, humidity: 53, pm25: 13, voc: 103, last_seen: '20260222T11:30:00.000Z'}
