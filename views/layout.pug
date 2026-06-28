@@ -1,5 +1,5 @@
 doctype html
-- const linkStyle = 'col-span-3 lg:col-span-1 bg-gray-800 m-1 pt-3 pb-3 rounded-sm text-center hover:bg-gray-700 text-gray-100'
+- const linkStyle = 'col-span-3 sm:col-span-1 bg-gray-800 m-1 pt-3 pb-3 rounded-sm text-center hover:bg-gray-700 text-gray-100'
 - const linkTextStyle = 'font-bold text-gray-100'
 html(lang='en')
   head
@@ -11,7 +11,7 @@ html(lang='en')
     script(src='/javascripts/htmx.min.js')
     script(src='/javascripts/tailwind.min.js')
   body(class='bg-gray-900 text-gray-100 max-w-6xl content-start m-auto font-sans min-h-screen')
-    div(class='grid grid-cols-3')
+    div(class='grid grid-cols-1 sm:grid-cols-3')
       a(class=linkTextStyle href='/sensors')
         div(class=linkStyle) Sensors
       a(class=linkTextStyle href='/lights-devices')
