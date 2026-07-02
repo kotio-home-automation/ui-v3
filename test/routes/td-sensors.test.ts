@@ -4,8 +4,8 @@ import { TdSensor } from '../../routes/td-sensors'
 import { config } from '../../config'
 
 const fakeDevices: TdSensor[] = [
-  { id: 1, name: 'first', temperature: 11.1, humidity: 22.2 },
-  { id: 2, name: 'second', temperature: 33.3 }
+  { id: 1, name: 'first', temperature: 11.1, humidity: 22.2, outdoor: false },
+  { id: 2, name: 'second', temperature: 33.3, outdoor: true }
 ]
 
 const apiBasePath = config.apis.tellstick
