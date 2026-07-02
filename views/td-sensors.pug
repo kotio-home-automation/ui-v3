@@ -3,6 +3,7 @@ block content
         div(class='sm:col-span-2 lg:col-span-3')
             h2(class='text-center text-gray-100 text-xl') Tellstick sensors
         each sensor in sensors
+            - indoorOutdoor = sensor.outdoor ? 'outdoor' : 'indoor'
             div(class='border-gray-700 gap-4 rounded-sm p-5 pt-1 m-2 bg-gray-800 text-gray-100 text-center')
                 h3(class='mb-2 font-bold underline') #{sensor.name}
                 div(class='grid grid-cols-2')
@@ -16,3 +17,4 @@ block content
                         else
                             p(class='text-xl text-left text-gray-400') #[i(class='text-3xl iconoir-droplet pr-1')]
                                 span(class='align-top') No data
+                p(class='text-xs text-left text-gray-400') Location: #{indoorOutdoor}

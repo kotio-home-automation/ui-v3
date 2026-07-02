@@ -5,12 +5,13 @@ export type TdSensor = {
   id: number
   name: string
   temperature: number
+  outdoor: boolean
   humidity?: number
 }
 
 const fakeInput: TdSensor[] = [
-  {id: 1, name: 'first', temperature: 22.2},
-  {id: 2, name: 'second', temperature: 11.1, humidity: 33}
+  {id: 1, name: 'first', temperature: 22.2, outdoor: true},
+  {id: 2, name: 'second', temperature: 11.1, humidity: 33, outdoor: false}
 ]
 
 const router: Router = express.Router()
