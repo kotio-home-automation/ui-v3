@@ -8,14 +8,11 @@ import indexRouter from './routes/index';
 import lightsRouter from './routes/lights';
 import magnetsRouter from './routes/magnets';
 import waterSensorsRouter from './routes/water_sensors';
-import airQualityRouter from './routes/airQuality';
-import ruuvitagRouter from './routes/ruuvitag';
-import sensorsRouter from './routes/sensors';
 import devicesRouter from './routes/devices';
 import lightDevicesRouter from './routes/lights-devices'
-import tdSensorsRouter from './routes/td-sensors';
 import camerasRouter from './routes/cameras';
 import camerasWrapperRouter from './routes/cameras-wrapper';
+import allSensorsRouter from './routes/allSensors'
 
 const app: Express = express();
 
@@ -30,15 +27,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/', indexRouter);
+app.use('/all-sensors', allSensorsRouter)
 app.use('/lights', lightsRouter);
 app.use('/magnets', magnetsRouter);
 app.use('/water-sensors', waterSensorsRouter);
-app.use('/air-quality', airQualityRouter);
 app.use('/devices', devicesRouter);
-app.use('/ruuvitag', ruuvitagRouter);
-app.use('/sensors', sensorsRouter);
 app.use('/lights-devices', lightDevicesRouter);
-app.use('/td-sensors', tdSensorsRouter);
 app.use('/cameras-wrapper', camerasWrapperRouter);
 app.use('/cameras', camerasRouter);
 

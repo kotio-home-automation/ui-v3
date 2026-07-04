@@ -1,6 +1,9 @@
 extends layout
 
 block content
-  div
-    h1(class='text-center text-2xl text-gray-100') Kotio
-    p(class='text-center text-gray-100') Home monitoring and controlling
+  div(hx-get='/all-sensors' hx-trigger='load, every 1m')
+    p Loading sensors...
+  div(hx-get='/magnets' hx-trigger='load, every 1m')
+    p Loading door sensors...
+  div(hx-get='/water-sensors' hx-trigger='load, every 1m')
+    p Loading water sensors...

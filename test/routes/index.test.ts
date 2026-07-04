@@ -8,6 +8,9 @@ describe('Index', () => {
       const response = await request.get(path)
       expect(response.status).toBe(200)
       expect(response.type).toEqual('text/html')
+      expect(response.text).toContain('hx-get="/all-sensors"');
+      expect(response.text).toContain('hx-get="/magnets"');
+      expect(response.text).toContain('hx-get="/water-sensors"');
     })
   })
 })
