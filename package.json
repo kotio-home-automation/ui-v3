@@ -7,6 +7,7 @@
     "build": "tsc && cp -r views/ dist/ && cp -r public dist/",
     "dev": "nodemon -r dotenv/config ./server.ts",
     "test": "vitest",
+    "fmt": "oxfmt",
     "lint": "oxlint",
     "coverage": "vitest run --coverage"
   },

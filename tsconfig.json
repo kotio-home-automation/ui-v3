@@ -17,4 +17,3 @@
   "include": ["bin/**/*", "lib/**/*", "test/**/*"],
   "exclude": ["node_modules", "dist"]
 }
-

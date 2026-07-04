@@ -8,4 +8,4 @@ export const config = {
     ruuvitag: process.env.API_RUUVITAG_BASE || 'http://locahost:3102/ruuvitag',
     tapoCamera: process.env.API_TAPO_CAMERA_BASE || 'http://localhost:5020/privacy',
   },
-} as const;
+} as const

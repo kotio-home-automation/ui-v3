@@ -1,9 +1,9 @@
-import express, { Router, Request, Response, NextFunction } from 'express';
+import express, { Router, Request, Response, NextFunction } from 'express'
 
 const router: Router = express.Router()
 
 router.get('/', async (req: Request, res: Response, _next: NextFunction) => {
-    res.render('lights-devices');
-});
+  res.render('lights-devices')
+})
 
 export default router

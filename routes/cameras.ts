@@ -1,5 +1,5 @@
-import express, {NextFunction, Request, Response, Router} from 'express';
-import { config } from '../config';
+import express, { NextFunction, Request, Response, Router } from 'express'
+import { config } from '../config'
 
 export type Camera = {
   host: string
@@ -13,13 +13,14 @@ export type CamerasData = {
 }
 
 const fakeInput: CamerasData = {
-  status: 'OK', data: [
+  status: 'OK',
+  data: [
     {
       host: 'localhost',
       privacy_enabled: true,
-      name: 'backyard'
-    }
-  ]
+      name: 'backyard',
+    },
+  ],
 }
 
 const router: Router = express.Router()
@@ -30,19 +31,17 @@ const getCameras = async (): Promise<Camera[]> => {
   }
 
   const response = await fetch(config.apis.tapoCamera)
-  const camerasData = await response.json() as unknown as CamerasData
+  const camerasData = (await response.json()) as unknown as CamerasData
   return camerasData.data
 }
 
 const renderCameras = async (res: Response) => {
-  const cameras = await getCameras();
-  res.render('cameras', { cameras });
+  const cameras = await getCameras()
+  res.render('cameras', { cameras })
 }
 
 router.get('/', async (_req: Request, res: Response, _next: NextFunction) => {
-  await renderCameras(res);
+  await renderCameras(res)
 })
-
-
 
 export default router

@@ -11,4 +11,3 @@ describe('Lights Switches', () => {
     })
   })
 })
-
