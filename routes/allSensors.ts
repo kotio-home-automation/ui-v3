@@ -2,7 +2,7 @@ import express, { NextFunction, Request, Response, Router } from 'express'
 import { Temporal } from '@js-temporal/polyfill'
 import { config } from '../config'
 
-type InputAirQuality = {
+export type InputAirQuality = {
   id: string
   name: string
   temperature: number
@@ -13,7 +13,7 @@ type InputAirQuality = {
   last_seen: string
 }
 
-type InputRuuvitag = {
+export type InputRuuvitag = {
   name: string
   data: {
     id: string
