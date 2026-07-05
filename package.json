@@ -6,7 +6,7 @@
     "start": "node -r dotenv/config ./dist/server.js",
     "build": "tsc && cp -r views/ dist/ && cp -r public dist/",
     "dev": "nodemon -r dotenv/config ./server.ts",
-    "test": "vitest",
+    "test": "vitest --run",
     "fmt": "oxfmt",
     "lint": "oxlint",
     "coverage": "vitest run --coverage"
