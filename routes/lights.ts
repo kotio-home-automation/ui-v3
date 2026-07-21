@@ -1,4 +1,4 @@
-import express, { Router, Request, Response, NextFunction } from 'express'
+import express, { NextFunction, Request, Response, Router } from 'express'
 import { Temporal } from '@js-temporal/polyfill'
 import { config } from '../config'
 
@@ -53,7 +53,8 @@ const getLights = async (): Promise<Light[]> => {
 
 const renderLights = async (res: Response) => {
   const lights = await getLights()
-  res.render('lights', { lights })
+  const sortedLights = [...lights].sort((a, b) => a.name.localeCompare(b.name))
+  res.render('lights', { lights: sortedLights })
 }
 
 router.get('/', async (_req: Request, res: Response, _next: NextFunction) => {

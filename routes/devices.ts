@@ -1,4 +1,4 @@
-import express, { Router, Request, Response, NextFunction } from 'express'
+import express, { NextFunction, Request, Response, Router } from 'express'
 import { config } from '../config'
 
 export type Device = {
@@ -33,7 +33,8 @@ const getDevices = async (): Promise<Device[]> => {
 
 const renderDevices = async (res: Response) => {
   const devices = await getDevices()
-  res.render('devices', { devices })
+  const sortedDevices = [...devices].sort((a, b) => a.name.localeCompare(b.name))
+  res.render('devices', { devices: sortedDevices })
 }
 
 router.get('/', async (_req: Request, res: Response, _next: NextFunction) => {
