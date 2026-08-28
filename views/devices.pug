@@ -1,3 +1,4 @@
+include mixins
 block content
     div(class='grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 border-1 border-b-0 border-gray-700 mb-2 rounded-t-sm')
         div(class='col-span-2 sm:col-span-2 lg:col-span-4')
@@ -8,7 +9,4 @@ block content
             - const devicesClassOff = 'iconoir-flash-off ' + devicesClassBase
             - const devicesClass = device.switchedOn ? devicesClassOn : devicesClassOff
             - const devicesUrl = device.switchedOn ? '/devices/' + device.id + '/off' : '/devices/' + device.id + '/on'
-            div(hx-post=devicesUrl hx-swap='innerHTML' hx-target='#devices-container' class='col-span-2 sm:col-span-1 lg:col-span-1 cursor-pointer border-gray-700 gap-4 rounded-xl p-5 pt-1 m-5 bg-gray-800 text-gray-100 text-center')
-                h3(class='mb-5 font-bold underline') #{device.name}
-                i(class=devicesClass)
-                p(class='htmx-indicator') Loading...
+            +deviceCard(device.name, devicesClass, null, null, true, devicesUrl, '#devices-container')

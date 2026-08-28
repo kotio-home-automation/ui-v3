@@ -1,0 +1,21 @@
+mixin deviceCard(title, iconClass, lastSeen, battery, isClickable = false, postUrl = null, targetId = null)
+  - const cardBaseClass = 'border-gray-700 gap-4 p-5 pt-1 bg-gray-800 text-gray-100 text-center'
+  - const cardLayoutClass = isClickable ? 'col-span-2 sm:col-span-1 lg:col-span-1 cursor-pointer rounded-xl m-5' : 'rounded-sm m-5'
+  
+  div(
+    class=`${cardBaseClass} ${cardLayoutClass}`
+    hx-post=postUrl
+    hx-swap=postUrl ? 'innerHTML' : null
+    hx-target=postUrl ? targetId : null
+  )
+    h3(class='mb-2 font-bold underline')= title
+    i(class=`text-6xl ${iconClass}`)
+    if block
+      block
+    else
+      if lastSeen
+        p(class='text-xs text-left mt-5 text-gray-400') last seen: #{lastSeen}
+      if battery
+        p(class='text-xs text-left text-gray-400') battery: #{battery}
+    if postUrl
+        p(class='htmx-indicator') Loading...
